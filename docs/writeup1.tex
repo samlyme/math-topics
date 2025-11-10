@@ -53,7 +53,7 @@ when finding the strongly connected components. There are no components with
 size \(> 1\). This means that no two nodes have a ``two-way connection''. This 
 also makes sense, as a chain of articles linking back on itself isn't very useful. 
 This also means that the graph is \textbf{acyclic}, thus there exists valid 
-topological sorts of this graph. Although not used not, the topological sort of 
+topological sorts of this graph. Although not used, the topological sort of 
 the graph may provide valuable insights. 
 
 \subsection{Communities and Clustering}
@@ -127,34 +127,19 @@ from its ``broadness''. Thus, the likelihood of an article receiving a new
 inwards link is practically random. 
 
 \section{Visualization Discussion}
-\todo{Write about the visual}
-
-Referring back to the figure, ...
+Looking at the figures, the visuals helped us understand how the Wikipedia Math network is structured. The community graph on page 2 shows five main clusters that represent different areas of mathematics. The color groups make it easy to see which articles are closely related. The “Mathematics” node sits near the center and connects many clusters, showing how broad topics link the rest of the network. It is apparent that broad articles dominate as hubs, which can hide more meaningful relationships between real math topics.
+The degree distribution plots show two main patterns. The in-degree distribution looks roughly like a Poisson curve, meaning most articles get a random, moderate number of incoming links. The out-degree distribution is very uneven with most articles linked to only a few others, while a few nodes link to hundreds. On the log-log plot, this creates a straight-line shape typical of a scale-free network. This means that a few hub articles, like “Mathematics” or “Calculus,” connect to many others, while most topics stay fairly isolated.
+Together, these visuals show that the Wikipedia math network is uneven and hierarchical. Some articles act as major connectors across topics, while most form smaller, tighter groups. Seeing these patterns helps explain how math knowledge is linked and organized online.
 
 \section{Reflection and Next Steps}
-\todo{write this out in paragraph form}
-
-What new questions or hypotheses emerged from your analysis?
-\begin{itemize}
-    \item How can we quantitify article ``broadness''?
-\end{itemize}
-
-What analyses might you do next (e.g., centrality, diffusion, or community detection)?
-\begin{itemize}
-    \item {
-        The dataset includes time-series data. Thus, we can see if a diffusion
-        model makes sense.
-    }
-    \item {
-        Experiment with other community detection algorithms.
-    }
-\end{itemize}
-
-Note any technical challenges or surprises you encountered.
-\begin{itemize}
-    \item {
-        Finding communities in articles gets ``weird''.
-    }
-\end{itemize}
+From our analysis, several new questions and hypotheses emerged, such as how we 
+can quantify article ``broadness.'' For future analyses, we plan to explore 
+measures of centrality, diffusion, and community detection. Since the dataset 
+includes time series data, it would be useful to test whether a diffusion model 
+appropriately captures the dynamics present. Additionally, we intend to experiment 
+with other community detection algorithms to improve the robustness of the results. 
+One technical challenge we encountered was that identifying communities in articles 
+can become unexpectedly complex and “weird,” often producing results that are 
+difficult to interpret.
 
 \end{document}
